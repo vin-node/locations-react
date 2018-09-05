@@ -1,0 +1,71 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "createdAt",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "text",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "source",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isTruncated",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "inReplyToStatusId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "inReplyToUserId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "isFavorited",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "isRetweeted",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "favoriteCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "inReplyToScreenName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "retweetCount",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "isPossiblySensitive",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "langu",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contributorsIDs",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "currentUserRetweetId",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20180829024413",
+    "entityTableName": "status",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl"
+}

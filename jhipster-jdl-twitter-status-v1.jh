@@ -1,0 +1,43 @@
+entity Status{
+private Date createdAt;
+    id Long
+     text String
+     source String
+     boolean isTruncated Boolean
+     long inReplyToStatusId Long
+     long inReplyToUserIdLong
+     boolean isFavorited Boolean
+     boolean isRetweeted Boolean
+     int favoriteCount Integer
+     String inReplyToScreenName String
+     //GeoLocation geoLocation = null;
+    // Place place = null;
+    // this field should be int in theory, but left as long for the serialized form compatibility - TFJ-790
+      retweetCount Long
+      isPossiblySensitive booean
+      lang String
+
+     contributorsIDs Long
+
+    // Status retweetedStatus;
+     ///UserMentionEntity[] userMentionEntities;
+//URLEntity[] urlEntities;
+    // HashtagEntity[] hashtagEntities;
+//MediaEntity[] mediaEntities;
+    // MediaEntity[] extendedMediaEntities;
+     //SymbolEntity[] symbolEntities;
+      currentUserRetweetId Long;
+     //Scopes scopes;
+    // User user = null;
+}
+
+// Set pagination options
+paginate Status with infinite-scroll
+
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+// Set an angular suffix
+angularSuffix * with recipeAngular

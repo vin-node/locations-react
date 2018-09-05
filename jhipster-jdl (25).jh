@@ -1,0 +1,27 @@
+entity Status{
+	  createdAt Instant
+      id Long
+      text String
+      source String
+      isTruncated Boolean
+      inReplyToStatusId Long
+      inReplyToUserId Long
+      isFavorited Boolean
+      isRetweeted Boolean
+      favoriteCount Integer
+      inReplyToScreenName String
+      retweetCount Long
+      isPossiblySensitive Boolean
+      lang String
+      contributorsIDs Long
+      currentUserRetweetId Long
+}
+
+// Set pagination options
+paginate Status with infinite-scroll
+
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl

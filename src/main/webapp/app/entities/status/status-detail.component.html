@@ -1,0 +1,81 @@
+
+<div *ngIf="status">
+    <h2><span>Status</span> {{status.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Created At</span></dt>
+        <dd>
+            <span>{{status.createdAt | date:'medium'}}</span>
+        </dd>
+        <dt><span>Text</span></dt>
+        <dd>
+            <span>{{status.text}}</span>
+        </dd>
+        <dt><span>Source</span></dt>
+        <dd>
+            <span>{{status.source}}</span>
+        </dd>
+        <dt><span>Is Truncated</span></dt>
+        <dd>
+            <span>{{status.isTruncated}}</span>
+        </dd>
+        <dt><span>In Reply To Status Id</span></dt>
+        <dd>
+            <span>{{status.inReplyToStatusId}}</span>
+        </dd>
+        <dt><span>In Reply To User Id</span></dt>
+        <dd>
+            <span>{{status.inReplyToUserId}}</span>
+        </dd>
+        <dt><span>Is Favorited</span></dt>
+        <dd>
+            <span>{{status.isFavorited}}</span>
+        </dd>
+        <dt><span>Is Retweeted</span></dt>
+        <dd>
+            <span>{{status.isRetweeted}}</span>
+        </dd>
+        <dt><span>Favorite Count</span></dt>
+        <dd>
+            <span>{{status.favoriteCount}}</span>
+        </dd>
+        <dt><span>In Reply To Screen Name</span></dt>
+        <dd>
+            <span>{{status.inReplyToScreenName}}</span>
+        </dd>
+        <dt><span>Retweet Count</span></dt>
+        <dd>
+            <span>{{status.retweetCount}}</span>
+        </dd>
+        <dt><span>Is Possibly Sensitive</span></dt>
+        <dd>
+            <span>{{status.isPossiblySensitive}}</span>
+        </dd>
+        <dt><span>Langu</span></dt>
+        <dd>
+            <span>{{status.langu}}</span>
+        </dd>
+        <dt><span>Contributors I Ds</span></dt>
+        <dd>
+            <span>{{status.contributorsIDs}}</span>
+        </dd>
+        <dt><span>Current User Retweet Id</span></dt>
+        <dd>
+            <span>{{status.currentUserRetweetId}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'status/'+ status.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

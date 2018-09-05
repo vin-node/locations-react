@@ -1,0 +1,102 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myStatusLabel">Create or edit a Status</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!status.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="status.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_createdAt">Created At</label>
+            <div class="d-flex">
+                <input id="field_createdAt" type="datetime-local" class="form-control" name="createdAt" [(ngModel)]="status.createdAt"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_text">Text</label>
+            <input type="text" class="form-control" name="text" id="field_text"
+                [(ngModel)]="status.text"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_source">Source</label>
+            <input type="text" class="form-control" name="source" id="field_source"
+                [(ngModel)]="status.source"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_isTruncated">Is Truncated</label>
+            <input type="checkbox" class="form-control" name="isTruncated" id="field_isTruncated"
+                [(ngModel)]="status.isTruncated"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_inReplyToStatusId">In Reply To Status Id</label>
+            <input type="number" class="form-control" name="inReplyToStatusId" id="field_inReplyToStatusId"
+                [(ngModel)]="status.inReplyToStatusId"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_inReplyToUserId">In Reply To User Id</label>
+            <input type="number" class="form-control" name="inReplyToUserId" id="field_inReplyToUserId"
+                [(ngModel)]="status.inReplyToUserId"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_isFavorited">Is Favorited</label>
+            <input type="checkbox" class="form-control" name="isFavorited" id="field_isFavorited"
+                [(ngModel)]="status.isFavorited"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_isRetweeted">Is Retweeted</label>
+            <input type="checkbox" class="form-control" name="isRetweeted" id="field_isRetweeted"
+                [(ngModel)]="status.isRetweeted"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_favoriteCount">Favorite Count</label>
+            <input type="number" class="form-control" name="favoriteCount" id="field_favoriteCount"
+                [(ngModel)]="status.favoriteCount"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_inReplyToScreenName">In Reply To Screen Name</label>
+            <input type="text" class="form-control" name="inReplyToScreenName" id="field_inReplyToScreenName"
+                [(ngModel)]="status.inReplyToScreenName"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_retweetCount">Retweet Count</label>
+            <input type="number" class="form-control" name="retweetCount" id="field_retweetCount"
+                [(ngModel)]="status.retweetCount"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_isPossiblySensitive">Is Possibly Sensitive</label>
+            <input type="checkbox" class="form-control" name="isPossiblySensitive" id="field_isPossiblySensitive"
+                [(ngModel)]="status.isPossiblySensitive"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_langu">Langu</label>
+            <input type="text" class="form-control" name="langu" id="field_langu"
+                [(ngModel)]="status.langu"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_contributorsIDs">Contributors I Ds</label>
+            <input type="number" class="form-control" name="contributorsIDs" id="field_contributorsIDs"
+                [(ngModel)]="status.contributorsIDs"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_currentUserRetweetId">Current User Retweet Id</label>
+            <input type="number" class="form-control" name="currentUserRetweetId" id="field_currentUserRetweetId"
+                [(ngModel)]="status.currentUserRetweetId"  />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>
